@@ -10,9 +10,10 @@ public class Beginning {
         frame.setSize(500,200);
         frame.setVisible(true);
         JLabel label=new JLabel("Hai");
-        frame.add(label);
         JButton b=new JButton("OK");
+        label.setBounds(10,15,15,15);
         b.setBounds(50,100,90,100);
+        frame.add(label);
         frame.add(b);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
