@@ -1,4 +1,4 @@
-package FoodInventorySystem;
+package Food;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
