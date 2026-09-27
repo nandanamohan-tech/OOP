@@ -12,7 +12,7 @@ public class ReportsFrame extends JFrame {
     public ReportsFrame() {
 Public static void main(String[ ]args)
 {
-new ReportsFrame.setVisible(true);
+new ReportsFrame().setVisible(true);
 }
 
         setTitle("Reports Frame");
