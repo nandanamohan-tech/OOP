@@ -57,6 +57,6 @@ public class StockManagementFrame extends JFrame {
     }
 public static void main(String[ ]args)
 {
-new StockManagementFrame.setVisible(true);
+new StockManagementFrame().setVisible(true);
 }
 }
