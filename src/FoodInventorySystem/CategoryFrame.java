@@ -42,8 +42,8 @@ public class CategoryFrame extends JFrame {
         scrollPane.setBounds(100, 160, 200, 120);
         add(scrollPane);
     }
-    Public static void main(String[ ]args)
+    public static void main(String[ ]args)
 {
-new CategoryFrame.setVisible(true);
+new CategoryFrame().setVisible(true);
 }
 }
