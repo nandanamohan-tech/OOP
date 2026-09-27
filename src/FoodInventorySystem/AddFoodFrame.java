@@ -88,4 +88,7 @@ public class AddFoodFrame extends JFrame {
         clearButton.setBounds(230, 350, 90, 30);
         add(clearButton);
     }
+public static void main(String[] args) {
+    new AddFoodFrame().setVisible(true);
+}
 }
