@@ -90,6 +90,6 @@ public class UpdateFoodFrame extends JFrame {
     }
 public static void main(String[ ]args)
 {
-new UpdateFoodFrame.setVisible(true);
+new UpdateFoodFrame().setVisible(true);
 }
 }
