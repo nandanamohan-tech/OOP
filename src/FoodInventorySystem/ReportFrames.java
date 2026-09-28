@@ -10,11 +10,6 @@ public class ReportsFrame extends JFrame {
     JButton viewReportButton;
 
     public ReportsFrame() {
-Public static void main(String[ ]args)
-{
-new ReportsFrame().setVisible(true);
-}
-
         setTitle("Reports Frame");
         setSize(500, 400);
         setLayout(null);
@@ -37,4 +32,8 @@ new ReportsFrame().setVisible(true);
         viewReportButton.setBounds(170, 240, 150, 35);
         add(viewReportButton);
     }
+Public static void main(String[ ]args)
+{
+new ReportsFrame().setVisible(true);
+}
 }
