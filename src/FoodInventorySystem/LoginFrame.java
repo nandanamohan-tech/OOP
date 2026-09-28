@@ -1,7 +1,6 @@
 package FoodInventorySystem;
 
 import javax.swing.*;
-
 public class LoginFrame extends JFrame {
 
     JLabel usernameLabel, passwordLabel;
