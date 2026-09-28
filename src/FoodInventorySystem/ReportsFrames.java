@@ -32,7 +32,7 @@ public class ReportsFrame extends JFrame {
         viewReportButton.setBounds(170, 240, 150, 35);
         add(viewReportButton);
     }
-Public static void main(String[ ]args)
+public static void main(String[ ]args)
 {
 new ReportsFrame().setVisible(true);
 }
