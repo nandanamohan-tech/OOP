@@ -43,4 +43,8 @@ public class CategoryFrame extends JFrame {
         scrollPane = new JScrollPane(categoryList);
         add(scrollPane, BorderLayout.CENTER);
     }
+    Public static void main(String[ ]args)
+{
+new CategoryFrame.setVisible(true);
+}
 }
