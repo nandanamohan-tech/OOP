@@ -45,6 +45,6 @@ public class CategoryFrame extends JFrame {
     }
     Public static void main(String[ ]args)
 {
-new CategoryFrame.setVisible(true);
+new CategoryFrame().setVisible(true);
 }
 }
