@@ -1,6 +1,7 @@
 package FoodInventorySystem;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class UpdateFoodFrame extends JFrame {
 
@@ -18,78 +19,87 @@ public class UpdateFoodFrame extends JFrame {
 
         setTitle("Update Food Item");
         setSize(450, 500);
-        setLayout(null);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
 
-        idLabel = new JLabel("Food ID:");
-        idLabel.setBounds(50, 50, 100, 30);
-        add(idLabel);
+        setLayout(new GridBagLayout());
 
-        idField = new JTextField();
-        idField.setBounds(170, 50, 200, 30);
-        add(idField);
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.insets = new Insets(8, 8, 8, 8);
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+
+        idLabel = new JLabel("Food ID:");
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        add(idLabel, gbc);
+
+        idField = new JTextField(15);
+        gbc.gridx = 1;
+        add(idField, gbc);
 
         nameLabel = new JLabel("Food Name:");
-        nameLabel.setBounds(50, 90, 100, 30);
-        add(nameLabel);
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        add(nameLabel, gbc);
 
-        nameField = new JTextField();
-        nameField.setBounds(170, 90, 200, 30);
-        add(nameField);
+        nameField = new JTextField(15);
+        gbc.gridx = 1;
+        add(nameField, gbc);
 
         categoryLabel = new JLabel("Category:");
-        categoryLabel.setBounds(50, 130, 100, 30);
-        add(categoryLabel);
+        gbc.gridx = 0;
+        gbc.gridy = 2;
+        add(categoryLabel, gbc);
 
         categoryBox = new JComboBox<>(
                 new String[]{"Grains", "Dairy", "Beverages", "Snacks", "Vegetables"}
         );
-        categoryBox.setBounds(170, 130, 200, 30);
-        add(categoryBox);
+        gbc.gridx = 1;
+        add(categoryBox, gbc);
 
         quantityLabel = new JLabel("Quantity:");
-        quantityLabel.setBounds(50, 170, 100, 30);
-        add(quantityLabel);
+        gbc.gridx = 0;
+        gbc.gridy = 3;
+        add(quantityLabel, gbc);
 
-        quantityField = new JTextField();
-        quantityField.setBounds(170, 170, 200, 30);
-        add(quantityField);
+        quantityField = new JTextField(15);
+        gbc.gridx = 1;
+        add(quantityField, gbc);
 
         unitLabel = new JLabel("Unit:");
-        unitLabel.setBounds(50, 210, 100, 30);
-        add(unitLabel);
+        gbc.gridx = 0;
+        gbc.gridy = 4;
+        add(unitLabel, gbc);
 
-        unitField = new JTextField();
-        unitField.setBounds(170, 210, 200, 30);
-        add(unitField);
+        unitField = new JTextField(15);
+        gbc.gridx = 1;
+        add(unitField, gbc);
 
         priceLabel = new JLabel("Price:");
-        priceLabel.setBounds(50, 250, 100, 30);
-        add(priceLabel);
+        gbc.gridx = 0;
+        gbc.gridy = 5;
+        add(priceLabel, gbc);
 
-        priceField = new JTextField();
-        priceField.setBounds(170, 250, 200, 30);
-        add(priceField);
+        priceField = new JTextField(15);
+        gbc.gridx = 1;
+        add(priceField, gbc);
 
         expiryLabel = new JLabel("Expiry Date:");
-        expiryLabel.setBounds(50, 290, 100, 30);
-        add(expiryLabel);
+        gbc.gridx = 0;
+        gbc.gridy = 6;
+        add(expiryLabel, gbc);
 
-        expiryField = new JTextField();
-        expiryField.setBounds(170, 290, 200, 30);
-        add(expiryField);
+        expiryField = new JTextField(15);
+        gbc.gridx = 1;
+        add(expiryField, gbc);
 
         updateButton = new JButton("Update");
-        updateButton.setBounds(120, 350, 90, 30);
-        add(updateButton);
+        gbc.gridx = 0;
+        gbc.gridy = 7;
+        add(updateButton, gbc);
 
         clearButton = new JButton("Clear");
-        clearButton.setBounds(230, 350, 90, 30);
-        add(clearButton);
+        gbc.gridx = 1;
+        add(clearButton, gbc);
     }
-public static void main(String[ ]args)
-{
-new UpdateFoodFrame().setVisible(true);
-}
 }
