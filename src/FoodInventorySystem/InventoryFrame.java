@@ -61,7 +61,6 @@ public class InventoryFrame extends JFrame {
 
         add(buttonPanel, BorderLayout.SOUTH);
     }
-}
     public static void main(String[] args) {
         new InventoryFrame().setVisible(true);
     }
