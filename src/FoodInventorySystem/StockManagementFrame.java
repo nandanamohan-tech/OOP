@@ -1,6 +1,7 @@
 package FoodInventorySystem;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class StockManagementFrame extends JFrame {
 
@@ -13,47 +14,58 @@ public class StockManagementFrame extends JFrame {
 
         setTitle("Stock Management Frame");
         setSize(500, 400);
-        setLayout(null);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
 
+        setLayout(new GridBagLayout());
+
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.insets = new Insets(10, 10, 10, 10);
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+
         foodLabel = new JLabel("Select Food Item:");
-        foodLabel.setBounds(50, 70, 120, 30);
-        add(foodLabel);
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        add(foodLabel, gbc);
 
         foodBox = new JComboBox<>(
                 new String[]{"Rice", "Milk", "Bread", "Juice"}
         );
-        foodBox.setBounds(180, 70, 200, 30);
-        add(foodBox);
+        gbc.gridx = 1;
+        add(foodBox, gbc);
 
         currentQuantityLabel = new JLabel("Current Quantity:");
-        currentQuantityLabel.setBounds(50, 120, 120, 30);
-        add(currentQuantityLabel);
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        add(currentQuantityLabel, gbc);
 
-        currentQuantityField = new JTextField();
-        currentQuantityField.setBounds(180, 120, 200, 30);
-        add(currentQuantityField);
+        currentQuantityField = new JTextField(15);
+        gbc.gridx = 1;
+        add(currentQuantityField, gbc);
 
         stockAmountLabel = new JLabel("Stock Amount:");
-        stockAmountLabel.setBounds(50, 170, 120, 30);
-        add(stockAmountLabel);
+        gbc.gridx = 0;
+        gbc.gridy = 2;
+        add(stockAmountLabel, gbc);
 
-        stockAmountField = new JTextField();
-        stockAmountField.setBounds(180, 170, 200, 30);
-        add(stockAmountField);
+        stockAmountField = new JTextField(15);
+        gbc.gridx = 1;
+        add(stockAmountField, gbc);
 
         addStockButton = new JButton("Add Stock");
-        addStockButton.setBounds(50, 230, 120, 30);
-        add(addStockButton);
+        gbc.gridx = 0;
+        gbc.gridy = 3;
+        add(addStockButton, gbc);
 
         removeStockButton = new JButton("Remove Stock");
-        removeStockButton.setBounds(180, 230, 130, 30);
-        add(removeStockButton);
+        gbc.gridx = 1;
+        add(removeStockButton, gbc);
 
         updateButton = new JButton("Update");
-        updateButton.setBounds(320, 230, 100, 30);
-        add(updateButton);
+        gbc.gridx = 2;
+        add(updateButton, gbc);
+    }
+}
     }
 public static void main(String[ ]args)
 {
