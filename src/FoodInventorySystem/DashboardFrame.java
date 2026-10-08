@@ -1,6 +1,7 @@
 package FoodInventorySystem;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class DashboardFrame extends JFrame {
 
@@ -12,46 +13,39 @@ public class DashboardFrame extends JFrame {
 
         setTitle("Dashboard Frame");
         setSize(600, 400);
-        setLayout(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
-        totalFoodLabel = new JLabel("Total Food Items: 0");
-        totalFoodLabel.setBounds(50, 50, 150, 30);
+        setLayout(new GridLayout(3, 3, 10, 10));
+
+        totalFoodLabel = new JLabel("Total Food Items: 0", SwingConstants.CENTER);
         add(totalFoodLabel);
 
-        lowStockLabel = new JLabel("Low Stock: 0");
-        lowStockLabel.setBounds(220, 50, 150, 30);
+        lowStockLabel = new JLabel("Low Stock: 0", SwingConstants.CENTER);
         add(lowStockLabel);
 
-        expiringLabel = new JLabel("Expiring Soon: 0");
-        expiringLabel.setBounds(390, 50, 150, 30);
+        expiringLabel = new JLabel("Expiring Soon: 0", SwingConstants.CENTER);
         add(expiringLabel);
 
         addFoodButton = new JButton("Add Food");
-        addFoodButton.setBounds(50, 120, 150, 40);
         add(addFoodButton);
 
         inventoryButton = new JButton("Inventory");
-        inventoryButton.setBounds(220, 120, 150, 40);
         add(inventoryButton);
 
         updateFoodButton = new JButton("Update Food");
-        updateFoodButton.setBounds(390, 120, 150, 40);
         add(updateFoodButton);
 
         categoryButton = new JButton("Category");
-        categoryButton.setBounds(50, 190, 150, 40);
         add(categoryButton);
 
         stockButton = new JButton("Stock Management");
-        stockButton.setBounds(220, 190, 150, 40);
         add(stockButton);
 
         reportsButton = new JButton("Reports");
-        reportsButton.setBounds(390, 190, 150, 40);
         add(reportsButton);
     }
+
     public static void main(String[] args) {
         {
             DashboardFrame dashboardFrame = new DashboardFrame();
