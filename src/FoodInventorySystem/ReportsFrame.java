@@ -40,10 +40,9 @@ public class ReportsFrame extends JFrame {
         viewReportButton = new JButton("View Report");
         add(viewReportButton);
     }
-}
-    }
 public static void main(String[ ]args)
 {
 new ReportsFrame().setVisible(true);
 }
 }
+

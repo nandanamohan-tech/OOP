@@ -65,10 +65,8 @@ public class StockManagementFrame extends JFrame {
         gbc.gridx = 2;
         add(updateButton, gbc);
     }
-}
+
+    public static void main(String[] args) {
+        new StockManagementFrame().setVisible(true);
     }
-public static void main(String[ ]args)
-{
-new StockManagementFrame().setVisible(true);
-}
 }
