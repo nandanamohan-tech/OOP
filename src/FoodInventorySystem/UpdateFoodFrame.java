@@ -102,7 +102,7 @@ public class UpdateFoodFrame extends JFrame {
         gbc.gridx = 1;
         add(clearButton, gbc);
     }
-    Public static void main(String[ ]args)
+    public static void main(String[ ]args)
 {
 new UpdateFoodFrame().setVisible(true);
 }
