@@ -1,6 +1,7 @@
 package FoodInventorySystem;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class ReportsFrame extends JFrame {
 
@@ -10,27 +11,36 @@ public class ReportsFrame extends JFrame {
     JButton viewReportButton;
 
     public ReportsFrame() {
+
         setTitle("Reports Frame");
         setSize(500, 400);
-        setLayout(null);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
 
-        totalItemsLabel = new JLabel("Total Items: 0");
-        totalItemsLabel.setBounds(80, 80, 200, 30);
+        setLayout(new GridLayout(4, 1, 10, 10));
+
+        totalItemsLabel = new JLabel(
+                "Total Items: 0",
+                SwingConstants.CENTER
+        );
         add(totalItemsLabel);
 
-        lowStockLabel = new JLabel("Low-stock Items: 0");
-        lowStockLabel.setBounds(80, 130, 200, 30);
+        lowStockLabel = new JLabel(
+                "Low-stock Items: 0",
+                SwingConstants.CENTER
+        );
         add(lowStockLabel);
 
-        expiringLabel = new JLabel("Expired/Expiring Items: 0");
-        expiringLabel.setBounds(80, 180, 250, 30);
+        expiringLabel = new JLabel(
+                "Expired/Expiring Items: 0",
+                SwingConstants.CENTER
+        );
         add(expiringLabel);
 
         viewReportButton = new JButton("View Report");
-        viewReportButton.setBounds(170, 240, 150, 35);
         add(viewReportButton);
+    }
+}
     }
 public static void main(String[ ]args)
 {
