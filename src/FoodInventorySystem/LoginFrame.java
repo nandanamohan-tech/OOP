@@ -1,59 +1,54 @@
-package FoodInventorySystem;
-
-import java.awt.GridBagConstraints;
-import java.awt.*;
+ package FoodInventorySystem;
 
 import javax.swing.*;
+import java.awt.*;
+
 public class LoginFrame extends JFrame {
+    private final InventoryManager manager;
+    private final JTextField usernameField = new JTextField(15);
+    private final JPasswordField passwordField = new JPasswordField(15);
 
-    JLabel usernameLabel, passwordLabel;
-    JTextField usernameField;
-    JPasswordField passwordField;
-    JButton loginButton, clearButton, exitButton;
-
-    public LoginFrame() {
-
-        setTitle("Login Frame");
-        setSize(400, 300);
+    public LoginFrame(InventoryManager manager) {
+        this.manager = manager;
+        setTitle("Food Inventory System - Login");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(420, 260);
         setLocationRelativeTo(null);
-        setLayout(new GridBagLayout());
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.insets = new Insets(10, 10, 10, 10);
+        setLayout(new BorderLayout(10, 10));
 
-        usernameLabel = new JLabel("Username:");
-        gbc.gridx = 0;
-        gbc.gridy = 0;
-        add(usernameLabel,gbc);
+        JLabel title = new JLabel("Food Inventory Management System", SwingConstants.CENTER);
+        title.setFont(title.getFont().deriveFont(Font.BOLD, 17f));
+        add(title, BorderLayout.NORTH);
 
-        usernameField = new JTextField(15);
-        gbc.gridx = 1;
-        add(usernameField,gbc);
+        JPanel fields = new JPanel(new GridLayout(2, 2, 10, 10));
+        fields.setBorder(BorderFactory.createEmptyBorder(15, 25, 5, 25));
+        fields.add(new JLabel("Username:")); fields.add(usernameField);
+        fields.add(new JLabel("Password:")); fields.add(passwordField);
+        add(fields, BorderLayout.CENTER);
 
-        passwordLabel = new JLabel("Password:");
-        gbc.gridx=0;
-        gbc.gridy=1;
-        add(passwordLabel,gbc);
+        JButton loginButton = new JButton("Login");
+        JButton clearButton = new JButton("Clear");
+        JButton exitButton = new JButton("Exit");
+        JPanel buttons = new JPanel(new FlowLayout());
+        buttons.add(loginButton); buttons.add(clearButton); buttons.add(exitButton);
+        add(buttons, BorderLayout.SOUTH);
 
-        passwordField = new JPasswordField(15);
-        gbc.gridx=1;
-        add(passwordField,gbc);
-
-        loginButton = new JButton("Login");
-        gbc.gridx=0;
-        gbc.gridy=2;
-        add(loginButton,gbc);
-
-        clearButton = new JButton("Clear");
-        gbc.gridx=1;
-        add(clearButton,gbc);
-
-        exitButton = new JButton("Exit");
-        gbc.gridx=2;
-        add(exitButton,gbc);
+        loginButton.addActionListener(e -> login());
+        passwordField.addActionListener(e -> login());
+        clearButton.addActionListener(e -> { usernameField.setText(""); passwordField.setText(""); });
+        exitButton.addActionListener(e -> dispose());
     }
 
-    public static void main(String[] args) {
-        new LoginFrame().setVisible(true);
+    private void login() {
+        String username = usernameField.getText().trim();
+        String password = new String(passwordField.getPassword());
+        // Demonstration credentials; change these before any real deployment.
+        if (username.equals("admin") && password.equals("admin123")) {
+            new DashboardFrame(manager).setVisible(true);
+            dispose();
+        } else {
+            JOptionPane.showMessageDialog(this, "Invalid username or password.", "Login Failed", JOptionPane.WARNING_MESSAGE);
+            passwordField.setText("");
+        }
     }
 }
