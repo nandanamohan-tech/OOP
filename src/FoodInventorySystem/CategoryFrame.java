@@ -45,8 +45,5 @@ public class CategoryFrame extends JFrame {
             UiSupport.showSuccess(this, "Category deleted.");
         } catch (InventoryException ex) { UiSupport.showError(this, ex); }
     }
-    public static void main(String[ ]args)
-{
-new CategoryFrame().setVisible(true);
-}
+    
 }

@@ -73,8 +73,4 @@ public class UpdateFoodFrame extends JFrame {
         nameField.setText(""); quantityField.setText(""); unitField.setText("");
         priceField.setText(""); expiryField.setText("");
     }
-    public static void main(String[ ]args)
-{
-new UpdateFoodFrame().setVisible(true);
-}
 }
