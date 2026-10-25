@@ -37,6 +37,8 @@ public class LoginFrame extends JFrame {
         passwordField.addActionListener(e -> login());
         clearButton.addActionListener(e -> { usernameField.setText(""); passwordField.setText(""); });
         exitButton.addActionListener(e -> dispose());
+        UiSupport.applyTheme(this);
+        UiSupport.styleDangerButton(clearButton);
     }
 
     private void login() {

@@ -21,8 +21,11 @@ public class DashboardFrame extends JFrame {
         heading.setFont(heading.getFont().deriveFont(Font.BOLD, 22f));
         add(heading, BorderLayout.NORTH);
 
-        JPanel summary = new JPanel(new GridLayout(1, 3, 10, 10));
-        summary.add(totalFoodLabel); summary.add(lowStockLabel); summary.add(expiringLabel);
+        JPanel summary = new JPanel(new GridLayout(1, 3, 12, 12));
+        summary.setOpaque(false);
+        summary.add(createSummaryCard(totalFoodLabel));
+        summary.add(createSummaryCard(lowStockLabel));
+        summary.add(createSummaryCard(expiringLabel));
         add(summary, BorderLayout.CENTER);
 
         JPanel navigation = new JPanel(new GridLayout(2, 3, 10, 10));
@@ -34,8 +37,21 @@ public class DashboardFrame extends JFrame {
         addNavigationButton(navigation, "Reports", () -> new ReportsFrame(manager, this).setVisible(true));
         add(navigation, BorderLayout.SOUTH);
         refreshSummary();
+        UiSupport.applyTheme(this);
+        UiSupport.styleTitle(heading);
 }
-    
+    private JPanel createSummaryCard(JLabel valueLabel) {
+        JPanel card = UiSupport.createCard();
+        card.setLayout(new BorderLayout(8, 8));
+
+        valueLabel.setFont(
+                new Font("SansSerif", Font.BOLD, 19)
+        );
+        valueLabel.setForeground(UiSupport.FOREST_GREEN);
+
+        card.add(valueLabel, BorderLayout.CENTER);
+        return card;
+    }
 
     private void addNavigationButton(JPanel panel, String text, Runnable action) {
         JButton button = new JButton(text);

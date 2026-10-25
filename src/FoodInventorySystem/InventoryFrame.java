@@ -38,6 +38,8 @@ public class InventoryFrame extends JFrame {
         editButton.addActionListener(e -> editSelected());
         deleteButton.addActionListener(e -> deleteSelected());
         refreshTable(manager.getAllItems());
+        UiSupport.applyTheme(this);
+        UiSupport.styleDangerButton(deleteButton);
     }
 
     private void refreshTable(List<FoodItem> items) {
@@ -74,11 +76,15 @@ public class InventoryFrame extends JFrame {
                 "Delete " + item.getFoodName() + "? This cannot be undone.", "Confirm Delete", JOptionPane.YES_NO_OPTION);
         if (answer == JOptionPane.YES_OPTION) {
             try {
-                manager.deleteItem(item.getFoodId()); refreshTable(manager.getAllItems()); dashboard.refreshSummary();
-                UiSupport.showSuccess(this, "Food item deleted.");
-            } catch (InventoryException ex) { UiSupport.showError(this, ex); }
-        }
+                manager.deleteItem(item.getFoodId());
+                refreshTable(manager.getAllItems());
+
+            } catch (InventoryException ex) {
+                UiSupport.showError(this, ex);
+            }
+
     }
+}
 
     private static class DefaultTableModelWrapper extends javax.swing.table.DefaultTableModel {
         DefaultTableModelWrapper(String[] columns) { super(columns, 0); }

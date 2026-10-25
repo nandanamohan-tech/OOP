@@ -24,6 +24,8 @@ public class CategoryFrame extends JFrame {
         JPanel bottom = new JPanel(); bottom.add(deleteButton); add(bottom, BorderLayout.SOUTH);
         addButton.addActionListener(e -> addCategory()); deleteButton.addActionListener(e -> deleteCategory());
         refreshCategories();
+        UiSupport.applyTheme(this);
+        UiSupport.styleDangerButton(deleteButton);
     }
 
     private void refreshCategories() {

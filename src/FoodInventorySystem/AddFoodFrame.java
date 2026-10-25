@@ -40,6 +40,8 @@ public class AddFoodFrame extends JFrame {
         add(buttons, BorderLayout.SOUTH);
         addButton.addActionListener(e -> addFood());
         clearButton.addActionListener(e -> clearFields());
+        UiSupport.applyTheme(this);
+        UiSupport.styleDangerButton(clearButton);
     }
 
     private void addRow(JPanel panel, GridBagConstraints c, int row, String label, Component field) {

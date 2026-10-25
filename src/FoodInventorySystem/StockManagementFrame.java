@@ -33,6 +33,8 @@ public class StockManagementFrame extends JFrame {
         addStockButton.addActionListener(e -> adjustStock(true));
         removeStockButton.addActionListener(e -> adjustStock(false));
         refreshFoodChoices();
+        UiSupport.applyTheme(this);
+        UiSupport.styleDangerButton(removeStockButton);
     }
 
     private void addRow(JPanel panel, GridBagConstraints c, int row, String label, Component field) {

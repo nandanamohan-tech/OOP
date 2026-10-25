@@ -27,6 +27,7 @@ public class ReportsFrame extends JFrame {
         JPanel bottom = new JPanel(); bottom.add(viewReportButton); add(bottom, BorderLayout.SOUTH);
         viewReportButton.addActionListener(e -> showDetailedReport());
         refreshReport();
+        UiSupport.applyTheme(this);
     }
 
     private void refreshReport() {

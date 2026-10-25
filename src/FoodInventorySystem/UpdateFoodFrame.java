@@ -42,6 +42,7 @@ public class UpdateFoodFrame extends JFrame {
         updateButton.addActionListener(e -> updateFood());
         clearButton.addActionListener(e -> clearFields());
         if (selectedItem != null) populate(selectedItem);
+        UiSupport.applyTheme(this);
     }
 
     private void addRow(JPanel panel, GridBagConstraints c, int row, String label, Component field) {
