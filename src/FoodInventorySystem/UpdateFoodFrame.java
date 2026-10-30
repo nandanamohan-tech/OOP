@@ -33,7 +33,7 @@ public class UpdateFoodFrame extends JFrame {
         addRow(form, c, 4, "Unit:", unitField);
         addRow(form, c, 5, "Price:", priceField);
         addRow(form, c, 6, "Expiry (yyyy-MM-dd):", expiryField);
-        idField.setEditable(false);
+        idField.setEditable(true);
         add(form, BorderLayout.CENTER);
 
         JButton updateButton = new JButton("Update"); JButton clearButton = new JButton("Clear");
