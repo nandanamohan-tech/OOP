@@ -39,6 +39,7 @@ public class LoginFrame extends JFrame {
         exitButton.addActionListener(e -> dispose());
         UiSupport.applyTheme(this);
         UiSupport.styleDangerButton(clearButton);
+
     }
 
     private void login() {
